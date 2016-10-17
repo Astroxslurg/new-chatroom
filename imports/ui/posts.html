@@ -4,8 +4,15 @@
       {{> post}}
     {{/each}}
   </ul>
+  {{> postsSubmit}}
 </template>
 
 <template name="post">
   <p>{{text}}</p>
+</template>
+
+<template name="postsSubmit">
+  <form class="posts-submit-form">
+    <input type="text" name="text" placeholder="Type to chat">
+  </form>
 </template>
