@@ -1,9 +1,9 @@
 <template name="posts">
-  <ul>
-    {{#each posts}}
-      {{> post}}
-    {{/each}}
-  </ul>
+  <div class="well well-lg">
+      {{#each posts}}
+        {{> post}}
+      {{/each}}
+  </div>
   {{> postsSubmit}}
 </template>
 
@@ -12,7 +12,18 @@
 </template>
 
 <template name="postsSubmit">
-  <form class="posts-submit-form">
-    <input type="text" name="text" placeholder="Type to chat">
-  </form>
+  {{#if loggedIn}}
+    <div class="input-group">
+      <span class="input-group-addon"></span>
+      <form class="posts-submit-form">
+        <input type="text" class="form-control" name="text" placeholder="Type to chat">
+      </form>
+    </div>
+    {{else}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Sign in to join the chat!
+        </div>
+      </div>
+    {{/if}}
 </template>

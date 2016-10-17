@@ -8,6 +8,12 @@ Template.posts.helpers({
   },
 });
 
+Template.postsSubmit.helpers({
+  loggedIn: function () {
+    return Boolean(Meteor.user());
+  },
+});
+
 Template.postsSubmit.events({
   'submit .posts-submit-form' (event) {
     event.preventDefault();
