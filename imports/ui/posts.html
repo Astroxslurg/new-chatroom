@@ -1,0 +1,11 @@
+<template name="posts">
+  <ul>
+    {{#each posts}}
+      {{> post}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="post">
+  <p>{{text}}</p>
+</template>

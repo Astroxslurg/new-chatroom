@@ -2,4 +2,4 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
-import '/includes/ui/posts.html';
+import '/imports/ui/posts.js';
