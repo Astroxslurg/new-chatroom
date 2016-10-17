@@ -23,7 +23,7 @@ Template.postsSubmit.events({
 
     Posts.insert({
       text,
-      user,
+      username: user.username,
     });
     target.text.value = '';
   },
