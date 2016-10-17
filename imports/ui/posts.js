@@ -12,12 +12,18 @@ Template.postsSubmit.events({
   'submit .posts-submit-form' (event) {
     event.preventDefault();
 
+    user = Meteor.user();
+    if (!user){
+      console.log("You must be logged in to chat");
+      return false;
+    }
+
     const target = event.target;
-    console.log(target);
     text = target.text.value;
 
     Posts.insert({
-      text
+      text,
+      user,
     });
     target.text.value = '';
   },
